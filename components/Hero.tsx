@@ -82,7 +82,7 @@ export default function Hero() {
             style={{ border: "1px solid var(--border-color)" }}
           >
             <Image
-              src="https://images.unsplash.com/photo-1615472096167-e2efc2f25dcd?w=520&q=80"
+              src="/photo.jpg"
               alt="Muslimah in tech — Backend Engineer"
               fill
               className="object-cover object-top"

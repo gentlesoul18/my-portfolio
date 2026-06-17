@@ -57,7 +57,7 @@ export default function About() {
             style={{ border: "1px solid var(--border-color)" }}
           >
             <Image
-              src="https://images.unsplash.com/photo-1615472096167-e2efc2f25dcd?w=480&q=80"
+              src="/photo.jpg"
               alt="Muslimah developer at work"
               fill
               className="object-cover object-center"

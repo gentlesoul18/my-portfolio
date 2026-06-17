@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Theme variables ── */
+:root {
+  --bg-primary: #14141f;
+  --bg-secondary: #1e1e2e;
+  --bg-tertiary: #252535;
+  --text-color: #e8e8f0;
+  --muted: #6b6b8a;
+  --border-color: #2d2d3f;
+  --accent: #a855f7;
+}
+
+html.light {
+  --bg-primary: #ffffff;
+  --bg-secondary: #faf7ff;
+  --bg-tertiary: #f3ecff;
+  --text-color: #3b0764;
+  --muted: #6d28d9;
+  --border-color: #ddd6fe;
+  --accent: #7c3aed;
+}
+
+html.light ::-webkit-scrollbar-track { background: var(--bg-primary); }
+html.light .dot-grid {
+  background-image: radial-gradient(rgba(124, 58, 237, 0.45) 1px, transparent 1px);
+}
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-color);
+  font-family: 'Space Mono', monospace;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+::selection {
+  background: var(--accent);
+  color: #fff;
+}
+
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: var(--bg-primary); }
+::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 3px; }
+
+@layer components {
+  .section-heading {
+    @apply flex items-center gap-4 mb-10;
+  }
+  .section-heading::after {
+    content: '';
+    @apply flex-1 h-px;
+    background: var(--border-color);
+  }
+
+  .btn-outline {
+    @apply text-xs px-3 py-1.5 transition-colors inline-flex items-center gap-1.5;
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+  }
+  .btn-outline:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  .btn-accent {
+    @apply text-xs px-3 py-1.5 transition-colors inline-flex items-center gap-1.5;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+  }
+  .btn-accent:hover {
+    background: var(--accent);
+    color: #fff;
+  }
+
+  .card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+  }
+
+  .dot-grid {
+    background-image: radial-gradient(rgba(168, 85, 247, 0.35) 1px, transparent 1px);
+    background-size: 14px 14px;
+  }
+}
